@@ -1,0 +1,265 @@
+/* --- CENÍK - SPECIFICKÉ STYLY --- */
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), 
+                url('technika_bg.png') no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: white; /* Zajištění viditelnosti */
+}
+.price-hero {
+    padding: 160px 20px 40px;
+    text-align: center;
+}
+
+.perex {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.price-tables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.price-card {
+    padding: 30px !important;
+}
+
+.price-card h3 {
+    color: var(--orange);
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 15px;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.price-table th {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--orange);
+    padding: 10px 5px;
+    border-bottom: 2px solid var(--glass-border);
+}
+
+.price-table td {
+    padding: 15px 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1.05rem;
+}
+
+.price-table tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--orange);
+}
+
+.price-info {
+    text-align: center;
+    padding: 40px !important;
+    margin-bottom: 100px;
+}
+
+.price-info p {
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+/* Responzivita */
+@media (max-width: 600px) {
+    .price-tables-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .price-table td, .price-table th {
+        font-size: 0.9rem;
+    }
+}
+/* --- CENÍK DOPLNĚK --- */
+
+/* Styl pro sekci individuální nabídky */
+.individual-offer {
+    margin: 50px auto 100px;
+    max-width: 1100px;
+    padding: 60px !important;
+    text-align: center;
+}
+
+.individual-offer h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    font-weight: 900;
+}
+
+.individual-offer p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.offer-features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.offer-features span {
+    font-weight: bold;
+    color: var(--orange);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* Úprava tabulky ikonky */
+.icon {
+    font-style: normal;
+    margin-right: 10px;
+}
+/* --- STYL PRO TLAČÍTKO V CENÍKU --- */
+
+.individual-offer .btn-orange {
+    display: inline-block;
+    padding: 18px 45px;
+    background-color: rgb(161, 97, 0);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.individual-offer .btn-orange:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: var(--orange-bright);
+    box-shadow: 0 15px 30px rgba(134, 74, 0, 0.4);
+    color: white;
+}
+
+/* Aktivní stav při kliknutí */
+.individual-offer .btn-orange:active {
+    transform: translateY(-2px);
+}
+/* Responzivita pro nabídku */
+@media (max-width: 768px) {
+    .individual-offer {
+        padding: 30px !important;
+    }
+    .offer-features {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* --- RESPONSIVITA NAVBARU --- */
+
+/* 1. Skrytí burgeru na počítači */
+.mobile-menu-btn {
+    display: none !important;
+}
+
+@media (max-width: 1050px) {
+    /* Schovat text u loga */
+    .logo span {
+        display: none !important;
+    }
+
+    /* Burger tlačítko */
+    .mobile-menu-btn {
+        display: block !important;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    /* HLAVNÍ LIŠTA - úprava zaoblení a přechodu */
+    .glass-nav {
+        flex-wrap: wrap;
+        padding: 15px 25px;
+        border-radius: 20px; /* Výchozí zaoblení */
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Když je menu otevřené, zmenšíme zaoblení spodních rohů, aby to vypadalo přirozeněji */
+    .glass-nav:has(.nav-links.active) {
+        border-radius: 15px;
+    }
+
+    /* ODKAZY - úprava čitelnosti a odsazení */
+    .nav-links {
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+        gap: 0; /* Mezery vyřešíme paddingem u odkazů */
+    }
+
+    .nav-links.active {
+        max-height: 450px; /* Dostatečný prostor */
+        opacity: 1;
+        padding: 20px 10px 10px 10px; /* Vnitřní okraj, aby text nebyl u kraje */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        margin: 0;
+        padding: 12px 15px; /* Větší plocha pro kliknutí a odstup od kraje */
+        font-size: 1.1rem;
+        width: 100%;
+        border-radius: 10px;
+        transition: background 0.2s ease;
+    }
+
+    /* Jemné zvýraznění odkazu při dotyku */
+    .nav-links a:active {
+        background: rgba(255, 255, 255, 0.05);
+    }
+    @media (max-width: 1050px) {
+        /* POSUNUTÍ OBSAHU POD NAVBAR */
+        body {
+            /* Přidá prostor nahoře, aby lišta nepřekrývala text/karty */
+            padding-top: 10px; 
+        }
+    
+        /* Pokud máš hned pod navbarem Hero sekci nebo první kartu, 
+           můžeš odsazení přidat i přímo jí pro lepší kontrolu */
+        .hero, main section:first-of-type {
+            margin-top: 10px;
+        }
+    
+        /* Zbytek tvého stávajícího kódu pro lištu zůstává stejný... */
+        .glass-nav {
+            flex-wrap: wrap;
+            /* ... atd ... */
+        }
+    }
+}
